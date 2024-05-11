@@ -1,0 +1,27 @@
+.image-overlay {
+    position: relative;
+  }
+  
+  .overlay-image {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    opacity: .5;
+    background-color: transparent;
+  }
+  
+  .overlay-image:hover {
+    opacity: .8;
+  }
+  
+  .data {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    padding: 40px;
+    background:transparent;
+    
+    color:black;
+    font-weight:bolder;
+  }

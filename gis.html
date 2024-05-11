@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>hotsopt on urban places for different pollution</title>
+<link href="gis.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="data">
+  
+    </div>
+    
+    <div class="imagemap">
+      <div class="image-overlay"></div>
+      <div class="image-wrapper">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Full_india_map.png" height="800px" width="900px">
+    </div>
+    
+
+
+
+<script>
+
+    const overlay = document.querySelector('.image-overlay');
+    const dataField = document.querySelector('.data');
+    
+    
+    const points = [
+      {
+        x: '250px',
+        y: '80px',
+        data: 'JAMMU&KASHMIR(EFFECTED BY AIR-POLLUTION)The current PM2.5 concentration in Jammu And Kashmir is 2.2 times above the recommended limit given by the WHO 24 hrs air quality guidelines value. What are the weather and climatic conditions in Jammu And Kashmir? How to protect yourself from air pollution around Jammu And Kashmir, India? Temp. Check if there is fresh air.Dust and smoke has enveloped the otherwise soothing atmosphere of J&K. Increase in the number of vehicles, especially diesel-run, smoke from brick kilns, cement plants, dusty roads are major factors responsible for rising air pollution levels in J&K. The problem is compounded by burning of biomass for coal making and open burning of waste.'
+        
+      },
+      {
+        x: '100px',
+        y: '370px',
+        data: 'GUJARAT(EFFECTED BY WATER-POLLUTION)Despite rainfall in the state last monsoon, people were facing a water crisis. In 2021, the water level of the Narmada dam was approx 115.75 meters. Gujarat is facing a massive water crisis. At present Gujarat has only 2% of the country’s water resources with 5% of the population.Further, more than 40% of rain flows into the sea as runoff every yeast due to the absence of water conservation structures. The state government has shown some willingness to fix the issue in the form of a document as Vision 2020 but nothing goes as per the plan.The Gujarat Department of Drinking Water and Sanitation, Ministry of Jal Shakti, resolved to implement the Jal Jeevan Mission, aiming that each rural household has a tap connection.'
+      },
+      {
+        x: '259px',
+        y: '215px',
+        data: 'DELHI(Effected by AIR POLLUTION )\n Globally, air that has 12 to 15 micrograms per cubic metre of PM2.5 is considered safe to breathe, while air with values above 35 micrograms per cubic metre is considered unhealthy.Delhi air quality was worse than India overall air quality with the city having a PM2.5 reading of 92.7 micrograms per cubic metre.Delhi struggles with bad air around the year, but the air gets particularly toxic during winterhappens due to various factors, including burning of crop remains by farmers in nearby states, industrial and vehicular emissions, low wind speeds and bursting of firecrackers during festivalLast year, the government shut schools and colleges for several days in a row due to the toxic air.Meanwhile, the northern Indian city of Beguserai and the northeastern city of Guwahati were ranked as the two most polluted cities in the world.Only seven countries met the World Health Organization (WHO)s annual PM2.5 guideline, which is an annual average of 5 micrograms per cubic metre or less.'
+      },
+      {
+        x: '200px',
+        y: '475px',
+        data:'MAHARASTRA(EFFECTED BY AIR-POLLUTION)Uttar Pradesh, Maharashtra, Bihar, West Bengal and Rajasthan account for over 50 per cent deaths attributed to air pollution in India, according to data published in Lancet Planetary Health December 22, 2020 At least 349,000 people died due to air pollution in Uttar Pradesh — the state hit the worst — followed by Maharashtra, Bihar, West Bengal and Rajasthan, the study said.It was conducted under the India State-Level Disease Burden Initiative by the Indian Council of Medical Research (ICMR), Public Health Foundation of India and Institute for Health Metrics and Evaluation These states were among the top five with theto air pollution in 2017 as well, according to study The impact of air pollution on deaths, disease burden and life expectancy across the states of India: the Global Burden of Disease Study 2017.' 
+       
+        
+      },
+      {
+        x: '300px',
+        y: '545px',
+        data: 'AP&TS(EFFECTED BY SOIL-POLLUTION using chemicals)Most states are affected by soil degradation. The worst are Punjab, Haryana, Gujarat, Maharashtra, Andhra Pradesh and Telangana. Restoring damaged soil takes decades.According to the National Bureau of Soil Survey and Land Use Planning, 146.8 million hectares, around 30% of the soil in India is degraded. Of this, around 29% is lost to the sea, 61% is transferred from one place to another, and 10% is deposited in reservoirs.Despite large-scale soil degradation, food production has increased due to technological inputs, and now India is the second largest producer of farm produce. While today, the country is self-sufficient in food production, it will have to import food in the years to come if its soil continues to degrade, especially considering that India, with just 2.4% of the world land area, has 18% of the world population to feed.',
+      },
+      {
+        x: '250px',
+        y: '700px',
+        data: 'TAMILNADU(EFFECTED BY INDUSTRIAL-POLLUTION)INDUSTRIALISATION AND URBANIZATION Tamil Nadu ranks third in terms of development of industries and fifth in terms of level of pollution. The major contributors to industrial pollution are leather tanning units, textile processing units, Chemical and petro chemical industries, cement industries and thermal power plants. About 80 percent of 2,500.MADURAI: Industrial pollution has led to rapid deterioration.'
+        
+      },
+      {
+        x: '300px',
+        y:'370px',
+        data: 'MADHYA PRADESH(EFFECTED BY WATER-POLLUTION )Industrial waste from factories in Madhya Pradesh is allegedly being dumped into empty borings in fields, claim activists.Madhya Pradesh Manpur town near Pithampur, a Special Economic Zone with almost 50 industrial units, is facing water contamination. The locals assert that the chemical debris from Pithampur is tossed out in open fields which is poisoning the Ajnar river close to the village and infecting groundwater and wells.Black chemical was floating on the surface of the water, Brijesh Singh, a farmer near the Ajnar river in Manpur, told Mongabay-India while talking about the toxic froth. "My cow died after drinking the water,” he alleged.'
+      },
+      {
+        x: '470px',
+        y: '420px',
+        data: 'ODISHA(EFFECTED BY SOIL-POLLUTION)This high level of degradation is due to the heavy tapping of mineral resources from a dozen open cast mines in the area over 70 years. Odisha resource-rich Sukinda valley acquired infamy as the fourth most polluted place in the world in 2007, ranked by the Blacksmith Institute of the US.This high level of degradation is due to the heavy tapping of mineral resources from a dozen open cast mines in the area over 70 years. Odisha resource-rich Sukinda valley acquired infamy as the fourth most polluted place in the world in 2007, ranked by the Blacksmith Institute of the US.The districts of Bolangir, Kalahandi an Koraput have bauxite covering an area of 9152 hacters (ha). Thus the soil around the mining area are polluted by heavy metals of aluminium, chromium and cadmium. The districts of Jajpur, Keonjhar, Mayurbhanj an Sundargarh having 3567 million tonnes (MT) of iron ores are extended over an area of 24149 ha. These ores containing about 45 to 54% chromium contaminate the soils around the mining area.'
+      },
+      {
+        x: '180px',
+        y: '580px',
+        data:'KARNATAKA(EFFECTED BY AIR-POLLUTION)It has been proved that the greatest cause of air pollution in Karnatakais from vehicles using the road network. Bengaluru is the most congested cityin the state and needs new laws to redress the problem of poor air quality. Astrict policy regarding parking needs to be introduced and the taxation ofvehicles needs reforming.'
+      },
+      {
+        x: '495px',
+        y: '300px',
+        data: 'BIHAR(EFFECTED BY AIR-POLLUTION)PATNA: Air pollution in Bihar remains the worst in the country for the second consecutive day on Saturday. The only three towns in the country where air quality index (AQI) level was in the “severe” category — above the 400-mark — were all in Bihar. The AQI was found to be in “very poor” category at 11 other places in the state on Saturday.AQI is a scale to measure air quality. If the air quality index (AQI) is below 50, then the air is considered better for health. An AQI between 50 and 100 is satisfactory, moderate between 100 and 200, poor between 200 and 300, and very poor between 300 and 400, and the air above 400 becomes dangerous.'
+      },
+      {
+        x:'180px',
+        y:'250px',
+        data:'RAJASTHAN(EFFECTED BY AIR-POLLUTION)Cities of Rajasthan are experiencing rising particulate pollution as well as facing the threat of multipollutant crisis with several gaseous pollutants including nitrogen dioxide (NO2) and ozone, beginning to rise. This increases public health risk in the state Air quality is worsening not only in non-attainment cities but also in smaller cities and towns of Rajasthan despite the clean air action underway. Time bound improvement in air quality requires state-wide action to improve systems and infrastructure in all the key sectors of pollution including industry, vehicles and transport, clean energy, management of waste streams, construction and greening. Allocate resources equitably for the priority measures in key sectors with a strong compliance framework to meet the clean air targets.'
+      },
+      {
+        x:'580px',
+        y: '380px',
+        data:'WESTBENGAL(EFFECTED BY AIR-POLLUTION)Air pollution is one of the most significant threats to human safety due to its detrimental health consequences worldwide. This study examines the air pollution levels in 22 districts of West Bengal from 2016 to 2021, using data from 81 stations operated by the West Bengal Pollution Control Board (WBPCB).Air pollution is one of the most significant threats to human safety due to its detrimental health consequences worldwide. This study examines the air pollution levels in 22 districts of West Bengal from 2016 to 2021, using data from 81 stations operated by the West Bengal Pollution Control Board (WBPCB). The study assesses the short- and long-term impacts of particulate matter (PM) on human health'
+      },
+      {
+        x:'350px',
+        y:'250px',
+        data:'UTTARPRADESH(EFFECTED BY AIR-POLLUTION)Air pollution continues to increase as winter begins. People are also having trouble breathing due to rising contaminants in the air. Three of the five most polluted cities in the country are from Uttar Pradesh. Among these, Agra is the most polluted city With the onset of winter, the amount of poisonous particles in the air is also increasing. Three cities from Uttar Pradesh are amongst the five most polluted cities in the country. Among them, the condition of Taj City Agra is the worst. An AQI of 458 was registered in the city. The Carbon monoxide amount in the air was also recorded 50 times more. The number of dust particles remained around 500 on Sunday from morning till night.'
+      },
+      {
+        x:'750px',
+        y:'230px',
+        data:'ARUNACHAL PRADESH(EFFECTED BY WATER-POLLUTION)Arunachal Pradesh Seppa town does not know what to do with its garbage. Its materials recovery facility (MRF) to segregate, recycle and repurpose waste is not functional due to a paucity of funds. Following orders to stop dumping waste in the Kameng river, many locals have taken to burning it — creating a new air pollution problem. “The work on 99 per cent of the MRF has been completed,” Polumatla told the media. Two years later, residents noticed that the river waters had turned black and that a large number of fish were dying. There were a number of possible explanations, including an avalanche in the higher regions where the river flows through, to possible glacial movement and resulting erosion.'
+      },
+      {
+        x:'230px',
+        y:'160px',
+        data:'PUNJAB(EFFECTED BY GROUND WATER-POLLUTION) At best, they are causing problems with river-water pollution.” Punjab is not alone facing ground water pollution. The Ministry of Jal Shakti also revealed that as on July 23, 2021, 47,873 rural habitations around India had reported quality issues with drinking water sources.This arsenic is absorbed by secondary minerals, such as iron hydroxides like goethite. Under oxidising conditions, the arsenic is immobile and remains sequestered in the iron hydroxides. However, when these sediments encounter organic-rich reducing conditions, the bacterial reduction of iron releases arsenic into groundwater.'
+      },
+      {
+        x:'190px',
+        y:'700px',
+        data:'KERALA(EFFECTED BY WATER-POLLUTION)Bacteriological pollution The major water quality problem associated with rivers of Kerala is bacteriological pollution.The assessment of river such as Chalakudy, Periyar, Muvattupuzha, Meenachil, Pamba and Achenkovil indicates that the major quality problem is due to bacteriological pollution and falls under B or C category of CPCB classification.There are local level quality problems faced by all rivers especially due to dumping of solid waste, bathing and discharge of effluents.With regard to groundwater, water'
+      },
+      {
+        x:'700px',
+        y:'350px',
+        data:'MIZORAM,NAGALAND,MAGALAYA(EFFECTED BY SOIL-POLLUTION)The source for the pollution of the river stretches in Manipur, Mizoram, Nagaland and Tripura is sewage and in the case of Assam it is sewage, industrial effluent and coal mining, the report said. In Meghalaya, these stretched were polluted because of sewage and coal mining.'
+      },
+    ];
+    
+    points.forEach((point) => {
+      let img = document.createElement('img'); 
+      img.style.left = point.x;
+      img.style.top = point.y;
+      img.title = point.data;
+      
+
+      img.className= 'overlay-image';
+      img.src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/544303/Target_Logo.svg"
+      
+      overlay.appendChild(img);
+      img.data = point.data;
+      img.addEventListener('mouseenter', handleMouseEnter);
+      img.addEventListener('mouseleave', handleMouseLeave);
+    });
+    
+    function handleMouseEnter(event) {
+      dataField.innerHTML = event.currentTarget.data;
+      var i = 0;
+      var txt =  'Globally, air that has 12 to 15 micrograms per cubic metre of PM2.5 is considered safe to breathe, while air with values above 35 micrograms per cubic metre is considered unhealthy.Delhi air quality was worse than India overall air quality with the city having a PM2.5 reading of 92.7 micrograms per cubic metre.Delhi struggles with bad air around the year, but the air gets particularly toxic during winterhappens due to various factors, including burning of crop remains by farmers in nearby states, industrial and vehicular emissions, low wind speeds and bursting of firecrackers during festivalLast year, the government shut schools and colleges for several days in a row due to the toxic air.Meanwhile, the northern Indian city of Beguserai and the northeastern city of Guwahati were ranked as the two most polluted cities in the world.Only seven countries met the World Health Organization (WHO)s annual PM2.5 guideline, which is an annual average of 5 micrograms per cubic metre or less.';
+      var speed = 50;
+      if (i < txt.length) 
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+        
+    }
+    
+    
+    function handleMouseLeave(event) {
+      dataField.innerHTML = ';';
+    }
+    var el_up = document.getElementById("GFG_UP");
+			var el_down = document.getElementById("GFG_DOWN");
+			
+			el_up.innerHTML = "Click on the button to generate "
+					+ "a link using JavaScript.";
+			
+			
+
+    
+
+</script>
+</body>
+</html>

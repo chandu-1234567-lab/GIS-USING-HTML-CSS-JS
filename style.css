@@ -1,0 +1,238 @@
+.black-video{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: blur(0px);
+  background-size: cover;
+  height: auto;
+  width: 100%;
+  
+  
+  
+}
+@media (max-aspect-ratio:16/9) {
+  .black-video{
+    width: auto;
+    height: 100%;
+  }
+  
+}
+
+.s::after{
+    color: white;
+    text-align: center;
+    padding: 330px;
+    content: "";
+    animation:s 8s infinite linear;
+    
+  
+    
+    
+    
+    
+
+    
+}
+
+@keyframes s{
+    
+    0% {
+        content: "@air pollution";
+      }
+      25% {
+        content: "@water pollution";
+      }
+      50% {
+        content: "@soil pollution"
+      }
+      75%{
+        content: "@noise pollution";
+      }
+      100%{
+        content: "@soil pollution";
+      }
+     
+}
+.h{
+  
+  color:#ffff;
+  padding: 180px;
+  text-align: center;
+  text-shadow: 2px 2px black;
+  
+}
+
+.nav{
+  width: 100%;
+  height: 10vh;
+  background-color:white;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  background: transparent;
+  
+  
+}
+
+
+nav .menu {
+  width: 30%;
+  display: flex;
+  justify-content: left;
+  padding-left: 1100px;
+  
+  
+}
+
+
+
+nav .menu a {
+  width: 25%;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+
+.sea{
+  text-align: center;
+  padding-right: 50px;
+  background:transparent;
+  
+}
+.search{
+  height: 40px;
+  width: 400px;
+  padding-left: 100px;
+  font-weight: bold;
+  border-radius: 28px;
+  text-size-adjust:unset;
+  
+}
+.rcb{
+  display: contents;
+  
+  background-color:transparent;
+   /* Set the navbar to fixed position */
+  top: 0; 
+  width: 100%;
+  display: contents;
+  color:black;
+
+  
+}
+.rcb a{
+  display: inline-block;
+  
+  color:black;
+  overflow: left;
+  border: 3px solid black;
+  border-radius: 36px;
+  text-align: center;
+  width: 80px;
+  text-decoration: none;
+}
+.csk{
+  margin-left: 1100px;
+}
+.csk:hover{
+  background-color: #444;
+}
+
+.rr{
+  margin-left: 30px;
+}
+.rr:hover{
+  background-color: #444;
+}
+.mi{
+  margin-left:30px;
+}
+.mi:hover{
+  background-color: #444;
+}
+
+
+.button{
+  width:100px;
+  height: 50px;
+  border-radius:90%;
+
+  border:2px solid white;
+  background-color:transparent ;
+  margin:50px;
+  box-sizing: border-box(50px);
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  color:black;
+
+}
+.button:hover{
+  background-color: whitesmoke;
+  box-shadow: 35px black ;
+}
+
+
+
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
